@@ -72,7 +72,8 @@ while True:
             pyautogui.click()
             pyautogui.sleep(1)
     cv2.imshow("Eye control mouse", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q') or key == 27: # 'q' or Esc
         break
 
 cam.release()

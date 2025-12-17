@@ -1,64 +1,107 @@
-# 👁️ Eye Controlled Mouse
+# 👁️🖱️ Eye-Controlled Mouse Using OpenCV and IP Camera
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge&logo=opencv&logoColor=white)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-orange?style=for-the-badge&logo=google&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+## 🔍 Overview
 
-Control your mouse cursor using just your eyes! 🖱️👀
+The Eye-Controlled Mouse project is an assistive Human–Computer Interaction (HCI) system that enables users to control the mouse cursor using eye movements 👀.
+It leverages computer vision techniques with OpenCV and supports both a built-in webcam 🎥 and a smartphone-based IP camera 📱.
 
-This application uses computer vision and machine learning to track your eye movements and blink gestures, allowing you to navigate your computer hands-free. Built with **OpenCV**, **MediaPipe**, and **PyAutoGUI**.
+This solution is especially valuable for users with limited mobility, offering a hands-free, accessible input method through real-time eye tracking and blink detection ♿✨.
 
-## ✨ Features
+## ✨ Key Features
 
-- **👀 Real-time Eye Tracking**: Moves the mouse cursor based on your gaze direction.
-- **😉 Blink to Click**: Perform mouse clicks by blinking your left eye.
-- **🚀 High Performance**: Uses MediaPipe's optimized Face Mesh for low-latency tracking.
-- **🛑 Safety Failsafe**: Includes corner failsafe and keyboard interrupt ('q') for easy exit.
-- **🖥️ Cross-Platform**: Works on Windows, macOS, and Linux (wherever Python & OpenCV run).
+- ✅ **Real-time video capture using:**
+  - 🎥 Built-in webcam
+  - 📱 Smartphone camera via IP camera streaming
+- ✅ 👁️ **Eye detection and tracking** using OpenCV
+- ✅ ➡️ **Cursor movement** controlled by right eye movement
+- ✅ 👈 **Mouse click simulation** via left eye blink detection
+- ✅ ⚡ **Low-latency, real-time processing**
+- ✅ ⌨️ **Simple keyboard-based termination** (Esc key)
 
-## 🛠️ Installation
+## 🧰 Technology Stack
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/vvvvvivekkk/eye_controlled_mouse.git
-    cd eye_controlled_mouse
-    ```
+- 🐍 **Programming Language:** Python 3.x
+- 👁️‍🗨️ **Computer Vision:** OpenCV (opencv-python)
+- 🎮 **Input Devices:**
+  - Built-in webcam
+  - Smartphone with IP camera application
 
-2.  **Install dependencies:**
-    It is recommended to use a virtual environment.
-    ```bash
-    pip install -r requirements.txt
-    ```
+## 💻 System Requirements
 
-## 🚀 Usage
+- ✅ Python 3.7 or higher
+- ✅ OpenCV (opencv-python)
+- ✅ Stable camera feed (webcam or smartphone IP camera)
+- 🖥️ Windows / Linux / macOS
+  *(Mouse control behavior may vary based on OS permissions)*
 
-1.  **Run the application:**
-    ```bash
-    python main.py
-    ```
+## 📦 Installation
 
-2.  **Controls:**
-    - **Move Cursor**: Move your head/eyes to look at different parts of the screen.
-    - **Left Click**: Blink your **left eye** quickly.
-    - **Quit**: Press `q` on your keyboard while the camera window is active.
+### 🔹 1. Clone the Repository
+```bash
+git clone https://github.com/vvvvvivekkk/eye_controlled_mouse.git
+cd eye_controlled_mouse
+```
 
-## 📦 Dependencies
+### 🔹 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-- `opencv-python`: For video capture and image processing.
-- `mediapipe`: For facial landmark detection.
-- `pyautogui`: For controlling the mouse programmatically.
+## ▶️ Usage
 
-## 🤝 Contributing
+Run the application:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+```bash
+python main.py
+```
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+🚀 Once launched, the application starts capturing video frames and processes eye movements in real time.
 
-## 📄 License
+## 🎮 Controls
 
-This project is open source and available under the [MIT License](LICENSE).
+- 👁️ **Right Eye Movement** → Controls mouse cursor position
+- 😉 **Left Eye Blink** → Performs mouse click
+- ⛔ **Esc Key** → Safely exits the application
+
+## 🧠 How It Works (High-Level)
+
+1.  **Capture video frames** from the selected camera source
+2.  **Detect facial landmarks** and eye regions
+3.  **Track eye position** to calculate cursor movement
+4.  **Detect blink patterns** for click actions
+5.  **Map eye movement** to screen coordinates in real time
+
+## 🛠️ Troubleshooting
+
+- 🔧 Ensure the selected camera is not used by another application
+- 📡 Verify the IP camera URL if using a smartphone
+- 💡 Maintain proper lighting for accurate eye detection
+- 🔄 Reinstall dependencies if OpenCV-related errors occur
+
+## 🚀 Potential Enhancements
+
+- ✨ Scroll gesture support
+- 🎯 Calibration mode for improved accuracy
+- 🖥️ Multi-monitor support
+- 🤖 Deep learning-based eye tracking (MediaPipe / Dlib)
+- 🎛️ Custom sensitivity and click thresholds
+
+## 🤝 Contributions
+
+Contributions are welcome and appreciated 🙌
+
+You can:
+- 🐞 Open an issue for bug reports or feature requests
+- 🔧 Submit a pull request with improvements or enhancements
+
+📌 Please ensure your code follows best practices and includes proper documentation.
+
+## 🙏 Acknowledgments
+
+This project was developed with the goal of enhancing accessibility through assistive technology ♿💙.
+
+## 👏 Credits
+
+- 🎥 **Sanyu Project World**
+- 🔗 YouTube Channel: [Sanyu Projects World](https://www.youtube.com/@sanyuprojectsworld)
+- 💐 Special thanks to the OpenCV community for providing powerful computer vision tools.
