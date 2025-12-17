@@ -5,14 +5,24 @@ import pyautogui
 
 #for acessing camera
 cam = cv2.VideoCapture(0)
+if not cam.isOpened():
+    print("Error: Could not open camera.")
+    exit()
+
 #for face mesh
 face_mesh = mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
 screen_w, screen_h = pyautogui.size()
 screen_x = 200  
 screen_y = 200
-while True:
 
-    _, frame = cam.read()
+print("Application started. Press 'q' to quit.")
+
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        print("Error: Failed to read frame from camera.")
+        break
+        
     frame = cv2.flip(frame, 1)
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     output = face_mesh.process(rgb_frame)
@@ -34,7 +44,7 @@ while True:
                 # Calculating difference from previous frame
                 screen_x += (new_screen_x - screen_x) * 1.5
                 screen_y += (new_screen_y - screen_y) * 1.5
-                print(screen_x, screen_y)
+                print(f"Mouse: {int(screen_x)}, {int(screen_y)}")
                 # Clipping if gone too far
                 if screen_x < 50:
                     screen_x = 100
@@ -47,7 +57,11 @@ while True:
                     screen_y = screen_h - 100
 
                 # moving the cursor
-                pyautogui.moveTo(screen_x, screen_y)
+                try:
+                    pyautogui.moveTo(screen_x, screen_y)
+                except pyautogui.FailSafeException:
+                    print("FailSafe triggered from mouse movement.")
+                    pass
 
         left = [landmarks[145], landmarks[159]]
         for landmark in left:
@@ -58,4 +72,8 @@ while True:
             pyautogui.click()
             pyautogui.sleep(1)
     cv2.imshow("Eye control mouse", frame)
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cam.release()
+cv2.destroyAllWindows()

@@ -1,72 +1,64 @@
-# Eye Control Mouse
+# 👁️ Eye Controlled Mouse
 
-This Python script utilizes computer vision to create an eye-tracking mouse control system. The script uses the MediaPipe library for face mesh detection and PyAutoGUI for mouse control.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-orange?style=for-the-badge&logo=google&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-## Setup
+Control your mouse cursor using just your eyes! 🖱️👀
 
-### Prerequisites
+This application uses computer vision and machine learning to track your eye movements and blink gestures, allowing you to navigate your computer hands-free. Built with **OpenCV**, **MediaPipe**, and **PyAutoGUI**.
 
-- Python 3.x
-- OpenCV
-- MediaPipe
-- PyAutoGUI
+## ✨ Features
 
-### Installation
+- **👀 Real-time Eye Tracking**: Moves the mouse cursor based on your gaze direction.
+- **😉 Blink to Click**: Perform mouse clicks by blinking your left eye.
+- **🚀 High Performance**: Uses MediaPipe's optimized Face Mesh for low-latency tracking.
+- **🛑 Safety Failsafe**: Includes corner failsafe and keyboard interrupt ('q') for easy exit.
+- **🖥️ Cross-Platform**: Works on Windows, macOS, and Linux (wherever Python & OpenCV run).
 
-1. Install the required dependencies:
+## 🛠️ Installation
 
+1.  **Clone the repository:**
     ```bash
-    pip install opencv-python mediapipe pyautogui
+    git clone https://github.com/vvvvvivekkk/eye_controlled_mouse.git
+    cd eye_controlled_mouse
     ```
 
-2. Clone the repository:
-
+2.  **Install dependencies:**
+    It is recommended to use a virtual environment.
     ```bash
-    git clone https://github.com/rajiv2004-cloud/Eye-Control-Mouse.git
-    cd eye-control-mouse
+    pip install -r requirements.txt
     ```
 
-## Usage
+## 🚀 Usage
 
-1. Run the script:
-
+1.  **Run the application:**
     ```bash
-    python eye_control_mouse.py
+    python main.py
     ```
 
-2. Adjust the camera to have a clear view of your face.
+2.  **Controls:**
+    - **Move Cursor**: Move your head/eyes to look at different parts of the screen.
+    - **Left Click**: Blink your **left eye** quickly.
+    - **Quit**: Press `q` on your keyboard while the camera window is active.
 
-3. Move your eyes to control the mouse cursor.
+## 📦 Dependencies
 
-4. Blink both eyes simultaneously to perform a click.
+- `opencv-python`: For video capture and image processing.
+- `mediapipe`: For facial landmark detection.
+- `pyautogui`: For controlling the mouse programmatically.
 
-## Features
+## 🤝 Contributing
 
-- Real-time eye tracking for mouse control.
-- Blink detection for mouse clicks.
-- Dynamic adjustment of mouse sensitivity based on eye movement.
-- On-screen visualization of eye and click points.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Customization
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-- Modify the `screen_x` and `screen_y` variables to adjust the initial mouse cursor position.
-- Adjust the sensitivity factor in the mouse movement calculations for personalized control.
+## 📄 License
 
-## Known Issues
-
-- The script may require fine-tuning for different lighting conditions.
-- Blink detection sensitivity may need adjustment based on individual user behavior.
-
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and submit a pull request.
-
-
-## Acknowledgments
-
-- The script uses the [MediaPipe](https://mediapipe.dev/) library for face mesh detection.
-- [PyAutoGUI](https://pyautogui.readthedocs.io/) is used for mouse control.
-
-Feel free to customize the README file further based on your project's specific details and requirements.
+This project is open source and available under the [MIT License](LICENSE).
