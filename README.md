@@ -102,6 +102,4 @@ This project was developed with the goal of enhancing accessibility through assi
 
 ## 👏 Credits
 
-- 🎥 **Sanyu Project World**
-- 🔗 YouTube Channel: [Sanyu Projects World](https://www.youtube.com/@sanyuprojectsworld)
 - 💐 Special thanks to the OpenCV community for providing powerful computer vision tools.
